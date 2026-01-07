@@ -1,0 +1,40 @@
+-- local has_none_ls, nls = require("null-ls")
+--
+-- if not has_none_ls then
+-- 	return
+-- end
+--
+-- -- if (nls == nil) then
+-- -- 	return
+-- -- end
+--
+-- print("nls exist")
+--
+-- local fmt = nls.builtins.formatting
+-- local dgn = nls.builtins.diagnostics
+-- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+-- nls.setup({
+-- 	sources = {
+-- 		-- # FORMATTING #
+-- 		fmt.google_java_format.with({ extra_args = { "--aosp" } }),
+-- 		-- # DIAGNOSTICS #
+-- 		dgn.checkstyle.with({
+-- 			extra_args = {
+-- 				"-c",
+-- 				vim.fn.expand("~/dotfiles/config/google_checks.xml"),
+-- 			},
+-- 		}),
+-- 	},
+-- 	on_attach = function(client, bufnr)
+-- 		if client.supports_method("textDocument/formatting") then
+-- 			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+-- 			vim.api.nvim_create_autocmd("BufWritePre", {
+-- 				group = augroup,
+-- 				buffer = bufnr,
+-- 				callback = function()
+-- 					vim.lsp.buf.format({ bufnr = bufnr })
+-- 				end,
+-- 			})
+-- 		end
+-- 	end,
+-- })

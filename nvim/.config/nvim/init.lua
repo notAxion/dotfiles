@@ -1,0 +1,66 @@
+-- require('oldvim')
+require("notAxion")
+
+-- function printTable(t, f)
+-- 	local function printTableHelper(obj, cnt)
+-- 		local cnt = cnt or 0
+--
+-- 		if type(obj) == "table" then
+-- 			io.write("\n", string.rep("  ", cnt), "{\n")
+-- 			cnt = cnt + 1
+--
+-- 			for k, v in pairs(obj) do
+-- 				if type(k) == "string" then
+-- 					io.write(string.rep("  ", cnt), '["' .. k .. '"]', " = ")
+-- 				end
+--
+-- 				if type(k) == "number" then
+-- 					io.write(string.rep("  ", cnt), "[" .. k .. "]", " = ")
+-- 				end
+--
+-- 				printTableHelper(v, cnt)
+-- 				io.write(",\n")
+-- 			end
+--
+-- 			cnt = cnt - 1
+-- 			io.write(string.rep("  ", cnt), "}")
+-- 		elseif type(obj) == "string" then
+-- 			io.write(string.format("%q", obj))
+-- 		else
+-- 			io.write(tostring(obj))
+-- 		end
+-- 	end
+--
+-- 	if f == nil then
+-- 		printTableHelper(t)
+-- 	else
+-- 		io.output(f)
+-- 		io.write("return")
+-- 		printTableHelper(t)
+-- 		io.output(io.stdout)
+-- 	end
+-- end
+
+-- function printTable(t)
+-- 	local result
+-- 	for key, value in ipairs(t) do
+-- 		-- prepare json key-value pairs and save them in separate table
+-- 		table.insert(result, string.format('"%s":%s', key, value))
+-- 	end
+-- 	-- get simple json string
+-- 	result = "{" .. table.concat(result, ",") .. "}"
+-- 	print(result)
+-- end
+--
+-- local eg = {
+-- 	settings = {
+-- 		Lua = {
+-- 			some = {
+-- 				thing = "yes",
+-- 			},
+-- 		},
+-- 	},
+-- }
+--
+-- -- printTable(eg)
+-- print(table.concat({ hello = "world" }, "\n"))

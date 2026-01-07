@@ -1,0 +1,5 @@
+vim.cmd("colorscheme gruvbox")
+-- vim.cmd("colorscheme onedark")
+vim.cmd(":hi statuslineNC guibg=#151413")
+vim.cmd(":hi statusline	  guibg=#413F3D")
+vim.cmd(":hi ColorColumn guibg=#151413")
