@@ -448,6 +448,19 @@ vim.lsp.config("pylsp", {
   },
 })
 
+local is_schemastore_present, json_schem_store = pcall(require, "schemastore")
+
+if is_schemastore_present then
+  vim.lsp.config("jsonls", {
+    settings = {
+      json = {
+        schemas = json_schem_store.json.schemas(),
+        validate = { enable = true },
+      },
+    },
+  })
+end
+
 ------------------------------- cmp -------------------------------
 
 local cmp = require("cmp")

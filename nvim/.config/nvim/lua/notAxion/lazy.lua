@@ -48,9 +48,11 @@ require("lazy").setup({
 
   { -- Highlight, edit, and navigate code
     "nvim-treesitter/nvim-treesitter",
-    build = function()
-      pcall(require("nvim-treesitter.install").update({ with_sync = true }))
-    end,
+    lazy = false,
+    build = ":TSUpdate",
+    -- build = function()
+    --   pcall(require("nvim-treesitter.install").update({ with_sync = true }))
+    -- end,
   },
   {
     "nvim-treesitter/nvim-treesitter-context",
@@ -195,6 +197,8 @@ require("lazy").setup({
     },
   },
 
+  "b0o/schemastore.nvim",
+
   -- breadcrumbs (statusbar/winbar shows current code context)
   {
     "SmiteshP/nvim-navic",
@@ -241,10 +245,9 @@ require("lazy").setup({
       {
         "microsoft/vscode-js-debug",
         lazy = true,
-        build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
+        build = "npm install --legacy-peer-deps --ignore-scripts --omit=dev --no-save && npm install gulp --no-save && npx gulp vsDebugServerBundle && rm -r out/dist && mv dist out",
       },
     },
-    -- ft = { "js", "ts", "mjs" },
   },
   {
     "jay-babu/mason-nvim-dap.nvim",
