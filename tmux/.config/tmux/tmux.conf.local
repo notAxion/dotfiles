@@ -7,6 +7,8 @@
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
 
+set -g extended-keys off
+
 # -- bindings ------------------------------------------------------------------
 
 # preserve tmux stock bindings,
@@ -412,7 +414,7 @@ tmux_conf_theme_clock_style="24"
 #   - false (default)
 #   - disabled
 # on Linux, this requires xsel, xclip or wl-copy
-tmux_conf_copy_to_os_clipboard=true
+tmux_conf_copy_to_os_clipboard=false
 
 
 # -- urlscan -------------------------------------------------------------------
