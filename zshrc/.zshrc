@@ -135,6 +135,13 @@ function zvm_after_init() {
 	zvm_bindkey vicmd '^O' 'lfcd\n'
 }
 
+# Skip only aliases defined in the directories.zsh lib file
+zstyle ':omz:lib:directories' aliases no
+
+# Skip all plugin aliases
+zstyle ':omz:plugins:*' aliases no
+
+
 plugins=(
 	git
 	zsh-autosuggestions
@@ -193,6 +200,8 @@ alias vim='nvim'
 alias -g NE='2>/dev/null'
 alias -g DN='> /dev/null'
 alias -g NUL='>/dev/null 2>&1'
+
+alias md='mkdir -p'
 
 # some extra funcs for me 
 mkcd() {
