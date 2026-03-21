@@ -24,6 +24,7 @@ require("lazy").setup({
     dependencies = {
       { "nvim-lua/plenary.nvim" },
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      { "ronandalton/telescope-recent-files.nvim" },
     },
     config = function()
       require("telescope").setup({
@@ -38,6 +39,7 @@ require("lazy").setup({
       })
 
       require("telescope").load_extension("fzf")
+      require("telescope").load_extension("recent-files")
     end,
   },
 
