@@ -27,6 +27,11 @@ require("lazy").setup({
     },
     config = function()
       require("telescope").setup({
+        pickers = {
+          oldfiles = {
+            file_ignore_patterns = { "timesyncd%.conf" },
+          },
+        },
         extensions = {
           fzf = {},
         },
