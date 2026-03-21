@@ -299,6 +299,9 @@ fi
 # opencode completions
 [ -s "$HOME/.local/share/opencode/_opencode" ] && source "$HOME/.local/share/opencode/_opencode"
 
+# gh completions
+[ -s "$HOME/.local/share/github-cli/_gh" ] && source "$HOME/.local/share/github-cli/_gh"
+
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 zvm_after_init
