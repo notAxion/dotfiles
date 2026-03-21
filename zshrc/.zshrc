@@ -164,6 +164,7 @@ unsetopt LIST_BEEP
 # Basic auto/tab complete:
 autoload -U compinit
 zstyle ':completion:*' menu select
+setopt auto_menu menu_complete
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
