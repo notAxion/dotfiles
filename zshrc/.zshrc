@@ -261,6 +261,16 @@ alias neofetch="neofetch --source ~/.config/neofetch/spider.txt"
 alias avd="/Users/06xhello/Library/Android/sdk/tools/emulator -avd Pixel_2_XL_API_25 >> /dev/null 2>&1 &"
 alias minecraft="java -jar ~/files/games/TLauncher-2.841/TLauncher-2.871.jar"
 
+# sets the man pager to use batcat
+# check https://github.com/sharkdp/bat/issues/1433 for the
+# config difference reason
+
+if [[ $OSTYPE == darwin* ]]; then
+	export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+elif [[ $OSTYPE == linux* ]]; then
+	export MANPAGER="batcat -l man -p"
+fi
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
