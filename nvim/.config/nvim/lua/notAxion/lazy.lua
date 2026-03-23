@@ -96,17 +96,21 @@ require("lazy").setup({
     -- end,
   },
 
-  -- install without yarn or npm
   {
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function()
-      vim.fn["mkdp#util#install"]()
+    -- INFO this is not being maintained, changing to its fork(i think)
+    -- "iamcco/markdown-preview.nvim",
+    "selimacerbas/markdown-preview.nvim",
+    dependencies = { "selimacerbas/live-server.nvim" },
+    config = function()
+      require("markdown_preview").setup({
+        -- all optional; sane defaults shown
+        instance_mode = "takeover", -- "takeover" (one tab) or "multi" (tab per instance)
+        port = 0, -- 0 = auto (8421 for takeover, OS-assigned for multi)
+        open_browser = true,
+        debounce_ms = 300,
+      })
     end,
   },
-  -- install with npm i guess ?
-  --	{ "iamcco/markdown-preview.nvim", build = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, },
 
   {
     "VonHeikemen/lsp-zero.nvim",
